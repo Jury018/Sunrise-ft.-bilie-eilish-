@@ -42,22 +42,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     lyric.style.opacity = 0; // Fade out
                     
                     setTimeout(() => {
-                        // Remove the lyric from DOM
+                       
                         lyricsContainer.removeChild(lyric);
                         currentLyricIndex++;
-                        displayLyric(); // Show next lyric
+                        displayLyric();
                     }, 1000); // Wait before removing (time for fade out)
                 }, 3000); // Show for 3 seconds
-            }, 1000); // Wait before fade in
+            }, 1000);
         }
     }
 
     function checkCurrentLyric() {
         const currentTime = audio.currentTime;
-        const lyricDurations = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]; // Durations in seconds for each lyric
+        const lyricDurations = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33];
         for (let i = 0; i < lyricDurations.length; i++) {
             if (currentTime < lyricDurations[i]) {
-                currentLyricIndex = i; // Set index based on current time
+                currentLyricIndex = i;
                 break;
             }
         }
@@ -65,12 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
-            audio.pause(); // Pause the music
+            audio.pause();
             clearTimeout(lyricTimeout); // Clear any ongoing lyric display
         } else {
             if (audio.paused) {
-                checkCurrentLyric(); // Check the current lyric index
-                playMusic(); // Play music automatically when returning
+                checkCurrentLyric();
+                playMusic(); 
             }
         }
     });
