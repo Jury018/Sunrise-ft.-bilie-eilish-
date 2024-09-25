@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Stop music when the user leaves the page
     document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
             audio.pause(); // Pause the music
@@ -76,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener for clicking the body to play music
     document.body.addEventListener('click', () => {
         if (audio.paused) {
             playMusic();
