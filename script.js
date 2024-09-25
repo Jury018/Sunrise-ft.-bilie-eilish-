@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "And I don't know what I'm crying for",
         "I don't think I could love you more",
         "It might not be long but baby I",
-        "I'll love you 'til the day that I die",
+        "I'll love you til the day that I die",
         "Til the day that I die",
         "Til the light leaves my eyes",
         "Til the day that I die"
